@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+<app-encabezado></app-encabezado>
+
+<div class="container centrar">
+<h1 class="pt-5">Carga tú archivo CSV</h1>
+    <input type="file" (change)="onFileChange($event)" accept=".csv" />
+    <button type="button" class="text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:focus:ring-yellow-900" (click)="predict()">Mostrar Resultado</button>
+    
+    <div *ngIf="results">
+      <h2>Resultados:</h2>
+      <textarea rows="10" cols="50" readonly>{{ results | json }}</textarea>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
+
+
